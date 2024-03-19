@@ -29,8 +29,6 @@ DEFAULT_UNIDOCK_ARGS = {
     "seed": "181129",
 }
 
-EF_FRACTION_LIST = [0.005, 0.01, 0.05, 0.1, 0.2]
-
 
 def main(config):
     rootdir = Path(config.get("rootdir", ".")).resolve()
@@ -118,7 +116,7 @@ def main(config):
                 for result_ligand in result_ligands:
                     with open(result_ligand, "r") as f:
                         content_list.append(f.read())
-                with open(f"./{dataset}_{search_mode}_results.sdf", "w") as f:
+                with open(f"{savedir}/results_all.sdf", "w") as f:
                     f.write("".join(content_list))
 
                 results_csv += f"{dataset},{search_mode},{total_num},{success_num},{cost_time},{cost_time/len(ligand_path_list)}\n"

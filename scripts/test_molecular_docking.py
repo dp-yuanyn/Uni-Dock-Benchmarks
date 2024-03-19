@@ -33,7 +33,7 @@ def main(config: Dict[str, Any]):
     savedir = Path(config.get("savedir", "results")).resolve()
     os.makedirs(savedir, exist_ok=True)
     round_num = config.get("round", 3)
-    search_mode_list = config.get("srarch_mode_list", ["fast", "balance", "detail"])
+    search_mode_list = config.get("search_mode_list", ["fast", "balance", "detail"])
     unidock_args = copy.deepcopy(DEFAULT_UNIDOCK_ARGS)
     unidock_args.update(config.get("unidock_args", dict()))
 
